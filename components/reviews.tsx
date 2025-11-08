@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function Reviews() {
@@ -36,7 +36,22 @@ export default function Reviews() {
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
-  const itemsPerView = 3
+  const [itemsPerView, setItemsPerView] = useState(3)
+
+  useEffect(() => {
+    const updateItemsPerView = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerView(1) // Mobile: 1 item
+      } else {
+        setItemsPerView(3) // Desktop: 3 items
+      }
+    }
+
+    updateItemsPerView()
+    window.addEventListener("resize", updateItemsPerView)
+    return () => window.removeEventListener("resize", updateItemsPerView)
+  }, [])
+
   const maxIndex = Math.max(0, reviews.length - itemsPerView)
 
   const next = () => {
@@ -55,7 +70,7 @@ export default function Reviews() {
           <p className="text-gray-600">Hàng nghìn khách hàng tin tưởng và yêu thích sản phẩm của chúng tôi</p>
         </div>
 
-        <div className="relative">
+        <div className="relative px-0 md:px-8 lg:px-12">
           {/* Slider Container */}
           <div className="overflow-hidden">
             <div
@@ -65,14 +80,19 @@ export default function Reviews() {
               {reviews.map((review) => (
                 <div
                   key={review.id}
-                  className="min-w-0 flex-shrink-0 px-3"
-                  style={{ width: `${100 / itemsPerView}%` }}
+                  className="min-w-0 flex-shrink-0 w-full md:w-1/3 px-2 md:px-3"
                 >
                   <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg p-6 shadow-md hover:shadow-lg transition h-full">
                     {/* Rating */}
                     <div className="flex gap-1 mb-3">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={16} fill={i < review.rating ? "#f59e0b" : "#e5e7eb"} className="text-amber-400" />
+                        <Star 
+                          key={i} 
+                          size={16} 
+                          fill={i < review.rating ? "#f59e0b" : "none"} 
+                          stroke={i < review.rating ? "#f59e0b" : "#e5e7eb"}
+                          className="text-amber-400" 
+                        />
                       ))}
                     </div>
 
@@ -81,11 +101,13 @@ export default function Reviews() {
 
                     {/* User Info */}
                     <div className="flex items-center gap-3">
-                      <img
-                        src={review.avatar || "/placeholder.svg"}
-                        alt={review.name}
-                        className="w-10 h-10 rounded-full object-cover"
-                      />
+                      <div className="w-20 aspect-[16/9] rounded overflow-hidden flex-shrink-0">
+                        <img
+                          src={review.avatar || "/placeholder.svg"}
+                          alt={review.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                       <div>
                         <p className="font-semibold text-gray-900 text-sm">{review.name}</p>
                         <p className="text-gray-500 text-xs">Khách hàng xác minh</p>
@@ -100,17 +122,17 @@ export default function Reviews() {
           {/* Navigation Buttons */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition z-10"
+            className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2 shadow-md transition z-10"
             aria-label="Previous"
           >
-            <ChevronLeft size={24} className="text-gray-700" />
+            <ChevronLeft size={20} className="text-white" />
           </button>
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition z-10"
+            className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2 shadow-md transition z-10"
             aria-label="Next"
           >
-            <ChevronRight size={24} className="text-gray-700" />
+            <ChevronRight size={20} className="text-white" />
           </button>
         </div>
       </div>

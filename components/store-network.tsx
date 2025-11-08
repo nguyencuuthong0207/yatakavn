@@ -151,20 +151,20 @@ export default function StoreNetwork() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {allFilteredStores.map((store) => (
             <div
               key={store.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition border-l-4 border-amber-500"
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition border-l-4 border-amber-500 flex flex-col"
             >
-              <img src={store.avatar || "/placeholder.svg"} alt={store.name} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h4 className="font-semibold text-gray-900 mb-3">{store.name}</h4>
+              <img src={store.avatar || "/placeholder.svg"} alt={store.name} className="w-full h-48 md:h-56 object-cover" />
+              <div className="p-4 md:p-6 flex flex-col flex-grow">
+                <h4 className="font-semibold text-gray-900 mb-3 text-sm md:text-base">{store.name}</h4>
 
-                <div className="space-y-3 text-sm mb-4">
+                <div className="space-y-2 md:space-y-3 text-xs md:text-sm mb-4 flex-grow">
                   <div className="flex gap-2">
                     <MapPin size={16} className="text-amber-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-600">{store.address}</p>
+                    <p className="text-gray-600 leading-relaxed">{store.address}</p>
                   </div>
                   <div className="flex gap-2">
                     <Phone size={16} className="text-amber-600 flex-shrink-0" />
@@ -176,11 +176,11 @@ export default function StoreNetwork() {
                   </div>
                 </div>
 
-                <div className="flex gap-3">
-                  <button className="flex-1 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white py-2 rounded font-semibold text-sm transition">
+                <div className="flex flex-col md:flex-row gap-2 md:gap-3 mt-auto">
+                  <button className="w-full md:flex-1 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white py-2 rounded font-semibold text-xs md:text-sm transition">
                     Xem Bản Đồ
                   </button>
-                  <button className="flex-1 bg-gray-900 hover:bg-gray-800 text-white py-2 rounded font-semibold text-sm transition">
+                  <button className="w-full md:flex-1 bg-gray-900 hover:bg-gray-800 text-white py-2 rounded font-semibold text-xs md:text-sm transition">
                     Liên hệ tư vấn
                   </button>
                 </div>
