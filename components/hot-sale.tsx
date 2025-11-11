@@ -7,8 +7,8 @@ export default function HotSale() {
     {
       id: 1,
       name: "Ghế Massage Osanno OS 10 DOKUJI NO GIJUSTU",
-      price: "155.000.000 VND",
-      originalPrice: "175.000.000 VND",
+      price: "155.000.000 đ",
+      originalPrice: "175.000.000 đ",
       rating: 5.0,
       reviews: 156,
       image: "/image/san-pham/1_1.webp",
@@ -19,8 +19,8 @@ export default function HotSale() {
     {
       id: 2,
       name: "Ghế Massage Osanno OS 900",
-      price: "55.200.000 VND",
-      originalPrice: "69.900.000 VND",
+      price: "55.200.000 đ",
+      originalPrice: "69.900.000 đ",
       rating: 4.8,
       reviews: 98,
       image: "/image/san-pham/1_1_11zon.webp",
@@ -31,8 +31,8 @@ export default function HotSale() {
     {
       id: 3,
       name: "Ghế Massage Osanno OS 6688",
-      price: "79.000.000 VND",
-      originalPrice: "99.000.000 VND",
+      price: "79.000.000 đ",
+      originalPrice: "99.000.000 đ",
       rating: 4.7,
       reviews: 203,
       image: "/image/san-pham/s88_v2_gold.gif",
@@ -43,8 +43,8 @@ export default function HotSale() {
     {
       id: 4,
       name: "Ghế Massage Osanno - Cao Cấp",
-      price: "45.000.000 VND",
-      originalPrice: "65.000.000 VND",
+      price: "45.000.000 đ",
+      originalPrice: "65.000.000 đ",
       rating: 4.6,
       reviews: 76,
       image: "/image/san-pham/1_1.webp",
@@ -86,7 +86,9 @@ export default function HotSale() {
               </div>
 
               <div className="p-4 flex flex-col flex-grow">
-                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 text-sm">{product.name}</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 text-sm min-h-[40px]">
+                  {product.name}
+                </h3>
 
                 {/* Rating */}
                 <div className="flex items-center gap-1 mb-3">
@@ -105,7 +107,7 @@ export default function HotSale() {
 
                 {/* Price */}
                 <div className="mb-3">
-                  <div className="flex flex-wrap gap-2 items-baseline whitespace-nowrap">
+                  <div className="flex flex-col">
                     <span className="text-lg font-bold text-amber-600">{product.price}</span>
                     <span className="text-sm text-gray-400 line-through">{product.originalPrice}</span>
                   </div>

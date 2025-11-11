@@ -49,7 +49,9 @@ export default function ProductCategory({
               </div>
 
               <div className="p-4 flex flex-col flex-grow">
-                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 text-sm">{product.name}</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 text-sm min-h-[40px]">
+                  {product.name}
+                </h3>
 
                 <div className="flex items-center gap-1 mb-3">
                   <div className="flex text-amber-400">
@@ -66,7 +68,7 @@ export default function ProductCategory({
                 </div>
 
                 <div className="mb-4">
-                  <div className="flex flex-wrap gap-2 items-baseline whitespace-nowrap">
+                  <div className="flex flex-col">
                     <span className="text-lg font-bold text-amber-600">{product.price}</span>
                     {product.originalPrice && (
                       <span className="text-sm text-gray-400 line-through">{product.originalPrice}</span>

@@ -5,8 +5,8 @@ export default function OtherProducts() {
     {
       id: 1,
       name: "YATAKA Foot Spa Deluxe",
-      price: "8.500.000 VND",
-      originalPrice: "11.000.000 VND",
+      price: "8.500.000 đ",
+      originalPrice: "11.000.000 đ",
       rating: 4.7,
       reviews: 89,
       image: "/image/san-pham/1_1.webp",
@@ -15,8 +15,8 @@ export default function OtherProducts() {
     {
       id: 2,
       name: "YATAKA Neck & Shoulder Massager",
-      price: "4.200.000 VND",
-      originalPrice: "5.500.000 VND",
+      price: "4.200.000 đ",
+      originalPrice: "5.500.000 đ",
       rating: 4.6,
       reviews: 156,
       image: "/image/san-pham/1_1_11zon.webp",
@@ -25,8 +25,8 @@ export default function OtherProducts() {
     {
       id: 3,
       name: "YATAKA Heat Belt Pro",
-      price: "3.500.000 VND",
-      originalPrice: "4.500.000 VND",
+      price: "3.500.000 đ",
+      originalPrice: "4.500.000 đ",
       rating: 4.8,
       reviews: 201,
       image: "/image/san-pham/s88_v2_gold.gif",
@@ -35,8 +35,8 @@ export default function OtherProducts() {
     {
       id: 4,
       name: "YATAKA Portable Mini Massager",
-      price: "2.800.000 VND",
-      originalPrice: "3.500.000 VND",
+      price: "2.800.000 đ",
+      originalPrice: "3.500.000 đ",
       rating: 4.5,
       reviews: 118,
       image: "/image/san-pham/1_1.webp",

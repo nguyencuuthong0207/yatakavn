@@ -5,8 +5,8 @@ export default function JapanMassageChairs() {
     {
       id: 1,
       name: "YATAKA Sakura Deluxe",
-      price: "72.500.000 VND",
-      originalPrice: "95.000.000 VND",
+      price: "72.500.000 đ",
+      originalPrice: "95.000.000 đ",
       rating: 4.9,
       reviews: 124,
       image: "/image/san-pham/1_1.webp",
@@ -15,8 +15,8 @@ export default function JapanMassageChairs() {
     {
       id: 2,
       name: "YATAKA Tokyo Premium",
-      price: "85.000.000 VND",
-      originalPrice: "110.000.000 VND",
+      price: "85.000.000 đ",
+      originalPrice: "110.000.000 đ",
       rating: 4.8,
       reviews: 98,
       image: "/image/san-pham/1_1_11zon.webp",
@@ -25,8 +25,8 @@ export default function JapanMassageChairs() {
     {
       id: 3,
       name: "YATAKA Fuji Elite",
-      price: "78.900.000 VND",
-      originalPrice: "102.000.000 VND",
+      price: "78.900.000 đ",
+      originalPrice: "102.000.000 đ",
       rating: 4.7,
       reviews: 156,
       image: "/image/san-pham/s88_v2_gold.gif",
@@ -35,8 +35,8 @@ export default function JapanMassageChairs() {
     {
       id: 4,
       name: "YATAKA Kyoto Master",
-      price: "95.500.000 VND",
-      originalPrice: "125.000.000 VND",
+      price: "95.500.000 đ",
+      originalPrice: "125.000.000 đ",
       rating: 4.9,
       reviews: 87,
       image: "/image/san-pham/1_1.webp",
