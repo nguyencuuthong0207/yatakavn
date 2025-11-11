@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
 
 export default function Banner() {
   const [current, setCurrent] = useState(0)
@@ -9,13 +10,12 @@ export default function Banner() {
 
   const banners = [
     {
-      type: "video",
-      videoId: "1118953784",
+      type: "image",
+      image: "/image/banner/Banner_web_Robot_massage_K-FLEX_11zon.webp",
     },
     {
       type: "image",
-      image:
-        "https://yatakavietnam.vn/wp-content/uploads/2024/02/z5194049642661_09eaf3bd86567eb4b5bda76b8cfc2d99-1536x517.jpg",
+      image: "/image/banner/Cover_song_am.jpg",
     },
   ]
 
@@ -39,18 +39,6 @@ export default function Banner() {
   return (
     <section className="relative w-full bg-black overflow-hidden">
       <div className="w-full aspect-[21/9]">
-        {current === 0 && (
-          <div className="relative w-full h-full">
-            <iframe
-              src={`https://player.vimeo.com/video/1118953784?h=8b8a5d5e0a&autoplay=1&loop=1&muted=1`}
-              className="absolute inset-0 w-full h-full object-cover"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        )}
-
         {banners.map((banner, idx) => (
           <div
             key={idx}
@@ -59,11 +47,14 @@ export default function Banner() {
             }`}
           >
             {banner.type === "image" && (
-              <div
-                className="w-full h-full bg-cover bg-center"
-                style={{
-                  backgroundImage: `url('${banner.image}')`,
-                }}
+              <Image
+                src={banner.image}
+                alt="Banner"
+                fill
+                priority={idx === 0}
+                quality={100}
+                sizes="100vw"
+                className="object-cover"
               />
             )}
           </div>
